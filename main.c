@@ -81,7 +81,7 @@ volatile int uxTopUsedPriority;
 int main(void)
 {
     cy_rslt_t result;
-#if defined (TARGET_CY8CKIT_064S0S2_4343W)
+#if defined (CY_DEVICE_SECURE)
     cyhal_wdt_t wdt_obj;
 
     /* Clear watchdog timer so that it doesn't trigger a reset */

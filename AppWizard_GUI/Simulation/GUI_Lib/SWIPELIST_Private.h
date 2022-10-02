@@ -9,7 +9,7 @@
 *                                                                    *
 **********************************************************************
 
-** emWin V6.24 - Graphical user interface for embedded applications **
+** emWin V6.26 - Graphical user interface for embedded applications **
 emWin is protected by international copyright laws.   Knowledge of the
 source code may not be used to write a similar product.  This file may
 only  be used  in accordance  with  a license  and should  not be  re-
@@ -64,6 +64,7 @@ typedef struct {
   GUI_COLOR        aBkColor[4];
   int              BitmapSpace;
   int              aBorderSize[4];
+  int              Period;
   U8               Flags;
   int              Threshold;
   unsigned         Overlap;
@@ -80,6 +81,7 @@ typedef struct {
   int                     LastVisible;
   int                     Sel;
   int                     ReleasedItem;
+  WM_HMEM                 hContext;       // Motion context.
 } SWIPELIST_OBJ;
 
 /*********************************************************************
@@ -89,7 +91,7 @@ typedef struct {
 **********************************************************************
 */
 #if GUI_DEBUG_LEVEL >= GUI_DEBUG_LEVEL_CHECK_ALL
-  #define SWIPELIST_INIT_ID(p) p->Widget.DebugId = SWIPELIST_ID
+  #define SWIPELIST_INIT_ID(p) p->Widget.DebugId = WIDGET_TYPE_SWIPELIST
 #else
   #define SWIPELIST_INIT_ID(p)
 #endif
@@ -100,6 +102,18 @@ typedef struct {
 #else
   #define SWIPELIST_LOCK_H(h)   (SWIPELIST_OBJ *)WM_LOCK_H(h)
 #endif
+
+/*********************************************************************
+*
+*       Defines
+*
+**********************************************************************
+*/
+//
+// WM_MOTION_OVERLAP... flags are stored in the upper two bits of Props.Flags
+//
+#define OVERLAP_FLAG_SHIFT     2
+#define OVERLAP_FLAG_MASK      ((WM_MOTION_OVERLAP_TOP | WM_MOTION_OVERLAP_BOTTOM) << OVERLAP_FLAG_SHIFT)
 
 /*********************************************************************
 *

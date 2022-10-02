@@ -9,7 +9,7 @@
 *                                                                    *
 **********************************************************************
 
-** emWin V6.24 - Graphical user interface for embedded applications **
+** emWin V6.26 - Graphical user interface for embedded applications **
 emWin is protected by international copyright laws.   Knowledge of the
 source code may not be used to write a similar product.  This file may
 only  be used  in accordance  with  a license  and should  not be  re-
@@ -89,7 +89,7 @@ typedef struct {
 **********************************************************************
 */
 #if GUI_DEBUG_LEVEL >= GUI_DEBUG_LEVEL_CHECK_ALL
-  #define SWITCH_INIT_ID(p) (p->Widget.DebugId = SWITCH_ID)
+  #define SWITCH_INIT_ID(p) (p->Widget.DebugId = WIDGET_TYPE_SWITCH)
 #else
   #define SWITCH_INIT_ID(p)
 #endif

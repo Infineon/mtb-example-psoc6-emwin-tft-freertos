@@ -9,7 +9,7 @@
 *                                                                    *
 **********************************************************************
 
-** emWin V6.24 - Graphical user interface for embedded applications **
+** emWin V6.26 - Graphical user interface for embedded applications **
 emWin is protected by international copyright laws.   Knowledge of the
 source code may not be used to write a similar product.  This file may
 only  be used  in accordance  with  a license  and should  not be  re-
@@ -49,7 +49,7 @@ Purpose     : Image include
 */
 #define IMAGE_CF_MEMDEV   (1 << 0)      // Makes the IMAGE widget use an internal Memory Device for
                                         // drawing. Contrary to the Memory Device which is created
-                                        // by the Window Manager’s automatic use of Memory Devices
+                                        // by the Window Manager's automatic use of Memory Devices
                                         // (WM_CF_MEMDEV), this device stays valid all the time. It has to be
                                         // ensured that the emWin memory pool which is defined by the
                                         // function GUI_ALLOC_AssignMemory() (in \c{GUIConf.c}), is big enough

@@ -3,7 +3,7 @@
   xSizeDisplay=320
   ySizeDisplay=240
   ColorConv=GUICC_8666
-  LastSavedWith=1.26b_6.24
+  LastSavedWith=1.30_6.26d
   BSP=
   ManageTextExt=0
   ShowMissingCharacters=0
@@ -3539,8 +3539,8 @@
     </SHOWSCREEN>
   </Interactions>
   <Selection>
-    Root=ID_SCREEN_02
-    Object=2048
+    Root=ID_SCREEN_07
+    Object=2049
   </Selection>
   <Terms>
   </Terms>
@@ -3553,6 +3553,12 @@
     Item=ID_DRAW_001, DRAW_LINE, C: 10, C: 35, C: 150, C: 35
     Item=ID_DRAW_001, SET_PENSIZE, C: 2
     Item=ID_DRAW_001, DRAW_LINE, C: 10, C: 50, C: 150, C: 50
+    Item=ID_DRAW_001, DRAW_ARC, C: 80, C: 210, C: 10, C: 0, C: 180000
+    Item=ID_DRAW_001, DRAW_ARC, C: 80, C: 210, C: 20, C: 0, C: 180000
+    Item=ID_DRAW_001, DRAW_ARC, C: 80, C: 210, C: 30, C: 0, C: 180000
+    Item=ID_DRAW_001, DRAW_ARC, C: 80, C: 210, C: 40, C: 0, C: 180000
+    Item=ID_DRAW_001, DRAW_ARC, C: 80, C: 210, C: 50, C: 0, C: 180000
+    Item=ID_DRAW_001, DRAW_ARC, C: 80, C: 210, C: 60, C: 0, C: 180000
     Item=ID_DRAW_001, SET_PENSIZE, C: 3
     Item=ID_DRAW_001, DRAW_LINE, C: 10, C: 65, C: 150, C: 65
     Item=ID_DRAW_001, SET_PENSIZE, C: 4

@@ -9,7 +9,7 @@
 *                                                                    *
 **********************************************************************
 
-** emWin V6.24 - Graphical user interface for embedded applications **
+** emWin V6.26 - Graphical user interface for embedded applications **
 emWin is protected by international copyright laws.   Knowledge of the
 source code may not be used to write a similar product.  This file may
 only  be used  in accordance  with  a license  and should  not be  re-
@@ -51,12 +51,14 @@ Purpose     : Dialog box include
 #include "RADIO.h"
 #include "ROTARY.h"
 #include "SCROLLBAR.h"
+#include "SCROLLER.h"
 #include "SLIDER.h"
 #include "SPINBOX.h"
 #include "SWIPELIST.h"
 #include "SWITCH.h"
 #include "TEXT.h"
 #include "TREEVIEW.h"
+#include "WHEEL.h"
 
 #if GUI_WINSUPPORT
 

@@ -175,7 +175,7 @@ extern APPW_ROOT_INFO ID_SCREEN_10_RootInfo;
 *
 *       Project path
 */
-#define APPW_PROJECT_PATH "C:/Project/emWin/tftKart/mtb-example-psoc6-emwin-tft-freertos/AppWizard_GUI"
+#define APPW_PROJECT_PATH "C:/BackUp/GitLab/repo/mtb-example-psoc6-emwin-tft-freertos/mtb-example-psoc6-emwin-tft-freertos/AppWizard_GUI"
 
 #endif  // RESOURCE_H
 

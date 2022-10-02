@@ -155,7 +155,7 @@ void tft_task(void *arg)
 void wait_for_switch_press_and_release(void)
 {
     /* Wait for SW2 to be pressed */
-    while(cyhal_gpio_read(CYBSP_USER_BTN) == CYBSP_BTN_PRESSED);
+    while(cyhal_gpio_read(CYBSP_USER_BTN) != CYBSP_BTN_PRESSED);
 
     /* Wait for SW2 to be released */
     while(cyhal_gpio_read(CYBSP_USER_BTN) == CYBSP_BTN_OFF);

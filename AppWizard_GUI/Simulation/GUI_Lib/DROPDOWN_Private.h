@@ -9,7 +9,7 @@
 *                                                                    *
 **********************************************************************
 
-** emWin V6.24 - Graphical user interface for embedded applications **
+** emWin V6.26 - Graphical user interface for embedded applications **
 emWin is protected by international copyright laws.   Knowledge of the
 source code may not be used to write a similar product.  This file may
 only  be used  in accordance  with  a license  and should  not be  re-
@@ -27,6 +27,7 @@ Purpose     : DROPDOWN private header file
 #include "DROPDOWN.h"
 #include "WIDGET.h"
 #include "GUI_ARRAY.h"
+#include "SCROLLER_Private.h"
 
 #if GUI_WINSUPPORT
 
@@ -61,21 +62,23 @@ typedef struct {
 } DROPDOWN_PROPS;
 
 typedef struct {
-  WIDGET              Widget;
-  I16                 Sel;        // Current selection
-  I16                 ySizeLB;    // ySize of assigned LISTBOX in expanded state
-  I16                 TextHeight;
-  GUI_ARRAY           Handles;
-  WM_SCROLL_STATE     ScrollState;
-  DROPDOWN_PROPS      Props;
-  WIDGET_SKIN const * pWidgetSkin;
-  WM_HWIN             hListWin;
-  U8                  Flags;
-  U16                 ItemSpacing;
-  U8                  ScrollbarWidth;
-  char                IsPressed;
-  WM_HMEM             hDisabled;
-  int                 LastMotionPosY;
+  WIDGET                 Widget;
+  I16                    Sel;        // Current selection
+  I16                    ySizeLB;    // ySize of assigned LISTBOX in expanded state
+  I16                    TextHeight;
+  GUI_ARRAY              Handles;
+  WM_SCROLL_STATE        ScrollState;
+  DROPDOWN_PROPS         Props;
+  WIDGET_SKIN const    * pWidgetSkin;
+  WM_HWIN                hListWin;
+  U8                     Flags;
+  U16                    ItemSpacing;
+  U8                     ScrollbarWidth;
+  char                   IsPressed;
+  WM_HMEM                hDisabled;
+  int                    LastMotionPosY;
+  SCROLLER_Handle        hScrollerV;
+  SCROLLER_Handle        hScrollerH;
 } DROPDOWN_Obj;
 
 /*********************************************************************
@@ -85,7 +88,7 @@ typedef struct {
 **********************************************************************
 */
 #if GUI_DEBUG_LEVEL >= GUI_DEBUG_LEVEL_CHECK_ALL
-  #define DROPDOWN_INIT_ID(p) (p->Widget.DebugId = DROPDOWN_ID)
+  #define DROPDOWN_INIT_ID(p) (p->Widget.DebugId = WIDGET_TYPE_DROPDOWN)
 #else
   #define DROPDOWN_INIT_ID(p)
 #endif

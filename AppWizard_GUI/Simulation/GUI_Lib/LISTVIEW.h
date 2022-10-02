@@ -9,7 +9,7 @@
 *                                                                    *
 **********************************************************************
 
-** emWin V6.24 - Graphical user interface for embedded applications **
+** emWin V6.26 - Graphical user interface for embedded applications **
 emWin is protected by international copyright laws.   Knowledge of the
 source code may not be used to write a similar product.  This file may
 only  be used  in accordance  with  a license  and should  not be  re-
@@ -127,6 +127,7 @@ void             LISTVIEW_GetItemTextSorted    (LISTVIEW_Handle hObj, unsigned C
 unsigned         LISTVIEW_GetLBorder           (LISTVIEW_Handle hObj);
 unsigned         LISTVIEW_GetNumColumns        (LISTVIEW_Handle hObj);
 unsigned         LISTVIEW_GetNumRows           (LISTVIEW_Handle hObj);
+unsigned         LISTVIEW_GetOverlap           (LISTVIEW_Handle hObj, int * pPeriod, U8 * pFlags);
 unsigned         LISTVIEW_GetRBorder           (LISTVIEW_Handle hObj);
 int              LISTVIEW_GetRow               (LISTVIEW_Handle hObj, int yPos);
 int              LISTVIEW_GetScrollStepH       (LISTVIEW_Handle hObj);
@@ -156,11 +157,12 @@ void             LISTVIEW_SetFont              (LISTVIEW_Handle hObj, const GUI_
 void             LISTVIEW_SetGridColor         (LISTVIEW_Handle hObj, GUI_COLOR Color);
 int              LISTVIEW_SetGridVis           (LISTVIEW_Handle hObj, int Show);
 void             LISTVIEW_SetHeaderHeight      (LISTVIEW_Handle hObj, unsigned HeaderHeight);
-void             LISTVIEW_SetItemBkColor       (LISTVIEW_Handle hObj, unsigned Column, unsigned Row, unsigned int Index, GUI_COLOR Color);
+void             LISTVIEW_SetItemBkColor       (LISTVIEW_Handle hObj, unsigned Column, unsigned Row, unsigned Index, GUI_COLOR Color);
 void             LISTVIEW_SetItemText          (LISTVIEW_Handle hObj, unsigned Column, unsigned Row, const char * s);
-void             LISTVIEW_SetItemTextColor     (LISTVIEW_Handle hObj, unsigned Column, unsigned Row, unsigned int Index, GUI_COLOR Color);
+void             LISTVIEW_SetItemTextColor     (LISTVIEW_Handle hObj, unsigned Column, unsigned Row, unsigned Index, GUI_COLOR Color);
 void             LISTVIEW_SetItemTextSorted    (LISTVIEW_Handle hObj, unsigned Column, unsigned Row, const char * pText);
 void             LISTVIEW_SetLBorder           (LISTVIEW_Handle hObj, unsigned BorderSize);
+void             LISTVIEW_SetOverlap           (LISTVIEW_Handle hObj, unsigned Overlap, int Period, U8 Flags);
 void             LISTVIEW_SetOwnerDraw         (LISTVIEW_Handle hObj, WIDGET_DRAW_ITEM_FUNC * pfDrawItem);
 void             LISTVIEW_SetRBorder           (LISTVIEW_Handle hObj, unsigned BorderSize);
 unsigned         LISTVIEW_SetRowHeight         (LISTVIEW_Handle hObj, unsigned RowHeight);

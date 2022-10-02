@@ -9,7 +9,7 @@
 *                                                                    *
 **********************************************************************
 
-** emWin V6.24 - Graphical user interface for embedded applications **
+** emWin V6.26 - Graphical user interface for embedded applications **
 emWin is protected by international copyright laws.   Knowledge of the
 source code may not be used to write a similar product.  This file may
 only  be used  in accordance  with  a license  and should  not be  re-
@@ -138,6 +138,7 @@ void             LISTBOX_DeleteItem            (LISTBOX_Handle hObj, unsigned In
 void             LISTBOX_EnableMotion          (LISTBOX_Handle hObj, int Flags);
 void             LISTBOX_EnableWrapMode        (LISTBOX_Handle hObj, int OnOff);
 GUI_COLOR        LISTBOX_GetBkColor            (LISTBOX_Handle hObj, unsigned Index);
+U16              LISTBOX_GetFixedScrollPos     (LISTBOX_Handle hObj);
 const GUI_FONT * LISTBOX_GetFont               (LISTBOX_Handle hObj);
 unsigned         LISTBOX_GetItemSpacing        (LISTBOX_Handle hObj);
 unsigned         LISTBOX_GetNumItems           (LISTBOX_Handle hObj);

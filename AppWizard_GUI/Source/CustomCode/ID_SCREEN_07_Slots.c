@@ -35,6 +35,7 @@ static void _cbBox(WM_MESSAGE * pMsg) {
     /* Call default callback */
     _pcbBox(pMsg);
     /* Draw arc */
+/*  
     GUI_SetPenSize(2);
     GUI_DrawArc(80, 210, 10, 10, 0, 180);
     GUI_DrawArc(80, 210, 20, 20, 0, 180);
@@ -42,6 +43,7 @@ static void _cbBox(WM_MESSAGE * pMsg) {
     GUI_DrawArc(80, 210, 40, 40, 0, 180);
     GUI_DrawArc(80, 210, 50, 50, 0, 180);
     GUI_DrawArc(80, 210, 60, 60, 0, 180);
+*/  
     break;
   default:
     _pcbBox(pMsg);
