@@ -3,13 +3,13 @@
 *        Solutions for real time microcontroller applications        *
 **********************************************************************
 *                                                                    *
-*        (c) 1996 - 2022  SEGGER Microcontroller GmbH                *
+*        (c) 1996 - 2023  SEGGER Microcontroller GmbH                *
 *                                                                    *
 *        Internet: www.segger.com    Support:  support@segger.com    *
 *                                                                    *
 **********************************************************************
 
-** emWin V6.26 - Graphical user interface for embedded applications **
+** emWin V6.32 - Graphical user interface for embedded applications **
 emWin is protected by international copyright laws.   Knowledge of the
 source code may not be used to write a similar product.  This file may
 only  be used  in accordance  with  a license  and should  not be  re-
@@ -102,12 +102,12 @@ Purpose     : SWIPELIST include
 *    These flags are used by the routine SWIPELIST_SetBitmap() and can be OR-combined.
 */
 #define SWIPELIST_BA_LEFT      (0 << 0)
-#define SWIPELIST_BA_RIGHT     (1 << 0)
-#define SWIPELIST_BA_HCENTER     (2 << 0)
+#define SWIPELIST_BA_RIGHT	   (1 << 0)
+#define SWIPELIST_BA_HCENTER	 (2 << 0)
 
 #define SWIPELIST_BA_VCENTER   (3 << 2)
-#define SWIPELIST_BA_TOP         (0 << 2)
-#define SWIPELIST_BA_BOTTOM    (1 << 2)
+#define SWIPELIST_BA_TOP	     (0 << 2)
+#define SWIPELIST_BA_BOTTOM	   (1 << 2)
 
 /*********************************************************************
 *

@@ -1,3 +1,9 @@
 AppWizard_GUI/Simulation
 # Documentation
 images
+
+# Exports, Project settings
+.mtbLaunchConfigs
+.settings
+.vscode
+

@@ -3,7 +3,7 @@
 *        Solutions for real time microcontroller applications        *
 **********************************************************************
 *                                                                    *
-*        (c) 1996 - 2022  SEGGER Microcontroller GmbH                *
+*        (c) 1996 - 2023  SEGGER Microcontroller GmbH                *
 *                                                                    *
 *        Internet: www.segger.com    Support:  support@segger.com    *
 *                                                                    *
@@ -89,32 +89,32 @@ Purpose     : Generated file do NOT edit!
 #define ID_RTEXT_63 63
 
 #define APPW_MANAGE_TEXT APPW_MANAGE_TEXT_EXT
-extern const unsigned char acAPPW_Language_0[];
+extern GUI_CONST_STORAGE unsigned char acAPPW_Language_0[];
 
 /*********************************************************************
 *
 *       Fonts
 */
-extern const unsigned char acArial_16_Bold_EXT[];
-extern const unsigned char acArial_13_Bold_EXT[];
-extern const unsigned char acArial_8_Normal_EXT[];
-extern const unsigned char acArial_10_Normal_EXT[];
-extern const unsigned char acArial_13_Normal_EXT[];
-extern const unsigned char acArial_16_Normal_EXT[];
-extern const unsigned char acArial_20_Normal_EXT[];
-extern const unsigned char acArial_24_Normal_EXT[];
-extern const unsigned char acArial_32_Normal_EXT[];
-extern const unsigned char acComicSansMS_18_Bold_EXT[];
-extern const unsigned char acArial_20_Bold_EXT[];
-extern const unsigned char acArial_24_Bold_EXT[];
-extern const unsigned char acArial_32_Bold_EXT[];
+extern GUI_CONST_STORAGE unsigned char acArial_16_Bold_EXT[];
+extern GUI_CONST_STORAGE unsigned char acArial_13_Bold_EXT[];
+extern GUI_CONST_STORAGE unsigned char acArial_8_Normal_EXT[];
+extern GUI_CONST_STORAGE unsigned char acArial_10_Normal_EXT[];
+extern GUI_CONST_STORAGE unsigned char acArial_13_Normal_EXT[];
+extern GUI_CONST_STORAGE unsigned char acArial_16_Normal_EXT[];
+extern GUI_CONST_STORAGE unsigned char acArial_20_Normal_EXT[];
+extern GUI_CONST_STORAGE unsigned char acArial_24_Normal_EXT[];
+extern GUI_CONST_STORAGE unsigned char acArial_32_Normal_EXT[];
+extern GUI_CONST_STORAGE unsigned char acComicSansMS_18_Bold_EXT[];
+extern GUI_CONST_STORAGE unsigned char acArial_20_Bold_EXT[];
+extern GUI_CONST_STORAGE unsigned char acArial_24_Bold_EXT[];
+extern GUI_CONST_STORAGE unsigned char acArial_32_Bold_EXT[];
 
 /*********************************************************************
 *
 *       Images
 */
-extern const unsigned char acInfineonBlackLogo[];
-extern const unsigned char acKS124117_2[];
+extern GUI_CONST_STORAGE unsigned char acInfineonBlackLogo[];
+extern GUI_CONST_STORAGE unsigned char acKS124117_2[];
 
 /*********************************************************************
 *
@@ -128,7 +128,7 @@ extern const unsigned char acKS124117_2[];
 */
 #define ID_ANIM_000 (GUI_ID_USER + 2)
 
-extern const APPW_ANIM_DATA ID_ANIM_000_Data;
+extern GUI_CONST_STORAGE APPW_ANIM_DATA ID_ANIM_000_Data;
 
 /*********************************************************************
 *
@@ -175,7 +175,7 @@ extern APPW_ROOT_INFO ID_SCREEN_10_RootInfo;
 *
 *       Project path
 */
-#define APPW_PROJECT_PATH "C:/BackUp/GitLab/repo/mtb-example-psoc6-emwin-tft-freertos/mtb-example-psoc6-emwin-tft-freertos/AppWizard_GUI"
+#define APPW_PROJECT_PATH "C:/BackUp/GitLab/repo/tft/mtb-example-psoc6-emwin-tft-freertos/AppWizard_GUI"
 
 #endif  // RESOURCE_H
 

@@ -3,13 +3,13 @@
 *        Solutions for real time microcontroller applications        *
 **********************************************************************
 *                                                                    *
-*        (c) 1996 - 2022  SEGGER Microcontroller GmbH                *
+*        (c) 1996 - 2023  SEGGER Microcontroller GmbH                *
 *                                                                    *
 *        Internet: www.segger.com    Support:  support@segger.com    *
 *                                                                    *
 **********************************************************************
 
-** emWin V6.26 - Graphical user interface for embedded applications **
+** emWin V6.32 - Graphical user interface for embedded applications **
 emWin is protected by international copyright laws.   Knowledge of the
 source code may not be used to write a similar product.  This file may
 only  be used  in accordance  with  a license  and should  not be  re-
@@ -44,6 +44,7 @@ Purpose     : Dialog box include
 #include "LISTVIEW.h"
 #include "LISTWHEEL.h"
 #include "MENU.h"
+#include "MOVIE.h"
 #include "MULTIEDIT.h"
 #include "MULTIPAGE.h"
 #include "PROGBAR.h"
@@ -57,6 +58,7 @@ Purpose     : Dialog box include
 #include "SWIPELIST.h"
 #include "SWITCH.h"
 #include "TEXT.h"
+#include "TICKER.h"
 #include "TREEVIEW.h"
 #include "WHEEL.h"
 

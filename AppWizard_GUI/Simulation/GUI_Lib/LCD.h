@@ -3,13 +3,13 @@
 *        Solutions for real time microcontroller applications        *
 **********************************************************************
 *                                                                    *
-*        (c) 1996 - 2022  SEGGER Microcontroller GmbH                *
+*        (c) 1996 - 2023  SEGGER Microcontroller GmbH                *
 *                                                                    *
 *        Internet: www.segger.com    Support:  support@segger.com    *
 *                                                                    *
 **********************************************************************
 
-** emWin V6.26 - Graphical user interface for embedded applications **
+** emWin V6.32 - Graphical user interface for embedded applications **
 emWin is protected by international copyright laws.   Knowledge of the
 source code may not be used to write a similar product.  This file may
 only  be used  in accordance  with  a license  and should  not be  re-
@@ -148,6 +148,7 @@ extern const LCD_API_COLOR_CONV LCD_API_ColorConv_16;
 extern const LCD_API_COLOR_CONV LCD_API_ColorConv_1616I;
 extern const LCD_API_COLOR_CONV LCD_API_ColorConv_111;
 extern const LCD_API_COLOR_CONV LCD_API_ColorConv_222;
+extern const LCD_API_COLOR_CONV LCD_API_ColorConv_2222;
 extern const LCD_API_COLOR_CONV LCD_API_ColorConv_233;
 extern const LCD_API_COLOR_CONV LCD_API_ColorConv_323;
 extern const LCD_API_COLOR_CONV LCD_API_ColorConv_332;
@@ -172,6 +173,7 @@ extern const LCD_API_COLOR_CONV LCD_API_ColorConv_8888I;
 extern const LCD_API_COLOR_CONV LCD_API_ColorConv_M111;
 extern const LCD_API_COLOR_CONV LCD_API_ColorConv_M1555I;
 extern const LCD_API_COLOR_CONV LCD_API_ColorConv_M222;
+extern const LCD_API_COLOR_CONV LCD_API_ColorConv_M2222I;
 extern const LCD_API_COLOR_CONV LCD_API_ColorConv_M233;
 extern const LCD_API_COLOR_CONV LCD_API_ColorConv_M323;
 extern const LCD_API_COLOR_CONV LCD_API_ColorConv_M332;
@@ -208,6 +210,7 @@ extern const LCD_API_COLOR_CONV LCD_API_ColorConv_M8888I;
 #define GUICC_1616I     &LCD_API_ColorConv_1616I
 #define GUICC_111       &LCD_API_ColorConv_111
 #define GUICC_222       &LCD_API_ColorConv_222
+#define GUICC_2222      &LCD_API_ColorConv_2222
 #define GUICC_233       &LCD_API_ColorConv_233
 #define GUICC_323       &LCD_API_ColorConv_323
 #define GUICC_332       &LCD_API_ColorConv_332
@@ -233,6 +236,7 @@ extern const LCD_API_COLOR_CONV LCD_API_ColorConv_M8888I;
 #define GUICC_M111      &LCD_API_ColorConv_M111
 #define GUICC_M1555I    &LCD_API_ColorConv_M1555I
 #define GUICC_M222      &LCD_API_ColorConv_M222
+#define GUICC_M2222I    &LCD_API_ColorConv_M2222I
 #define GUICC_M233      &LCD_API_ColorConv_M233
 #define GUICC_M323      &LCD_API_ColorConv_M323
 #define GUICC_M332      &LCD_API_ColorConv_M332
@@ -363,6 +367,10 @@ typedef void tLCDDEV_DrawBitmap   (int x0, int y0, int xsize, int ysize,
 #define LCD_DEVCAP_MIRROR_Y          0x0D
 #define LCD_DEVCAP_SWAP_XY           0x0E
 #define LCD_DEVCAP_SWAP_RB           0x0F
+#define LCD_DEVCAP_XSIZE_SIM         0x10
+#define LCD_DEVCAP_YSIZE_SIM         0x11
+#define LCD_DEVCAP_VXSIZE_SIM        0x12
+#define LCD_DEVCAP_VYSIZE_SIM        0x13
 
 int LCD_GetXSizeMax(void);
 int LCD_GetYSizeMax(void);

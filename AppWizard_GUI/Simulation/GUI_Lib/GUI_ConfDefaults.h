@@ -3,13 +3,13 @@
 *        Solutions for real time microcontroller applications        *
 **********************************************************************
 *                                                                    *
-*        (c) 1996 - 2022  SEGGER Microcontroller GmbH                *
+*        (c) 1996 - 2023  SEGGER Microcontroller GmbH                *
 *                                                                    *
 *        Internet: www.segger.com    Support:  support@segger.com    *
 *                                                                    *
 **********************************************************************
 
-** emWin V6.26 - Graphical user interface for embedded applications **
+** emWin V6.32 - Graphical user interface for embedded applications **
 emWin is protected by international copyright laws.   Knowledge of the
 source code may not be used to write a similar product.  This file may
 only  be used  in accordance  with  a license  and should  not be  re-
@@ -152,7 +152,7 @@ Attention : Do not modify this file ! If you do, you will not
 /* Default for types */
 #ifndef GUI_TIMER_TIME
   #define GUI_TIMER_TIME int  /* default is to use 16 bits for 16 bit CPUs,
-                               32 bits on 32 bit CPUs for timing */
+	                           32 bits on 32 bit CPUs for timing */
 #endif
 
 /* Types used for memory allocation */

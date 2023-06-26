@@ -3,13 +3,13 @@
 *        Solutions for real time microcontroller applications        *
 **********************************************************************
 *                                                                    *
-*        (c) 1996 - 2022  SEGGER Microcontroller GmbH                *
+*        (c) 1996 - 2023  SEGGER Microcontroller GmbH                *
 *                                                                    *
 *        Internet: www.segger.com    Support:  support@segger.com    *
 *                                                                    *
 **********************************************************************
 
-** emWin V6.26 - Graphical user interface for embedded applications **
+** emWin V6.32 - Graphical user interface for embedded applications **
 emWin is protected by international copyright laws.   Knowledge of the
 source code may not be used to write a similar product.  This file may
 only  be used  in accordance  with  a license  and should  not be  re-
@@ -81,12 +81,13 @@ typedef struct {
   unsigned  FrameRadius;     // Radius to be used for all keys
   unsigned  FrameSize;       // Frame size in pixels to be used for all keys
   unsigned  SpaceX, SpaceY;  // Space in /1000 between the keys
+  unsigned  CursorSensy;     // Sensitivity of cursor control window
 } KEYBOARD_PROPS;
 
 typedef struct {
   WIDGET           Widget;
   KEYBOARD_PROPS   Props;
-  const GUI_FONT * apFont[2];
+  const GUI_FONT * apFont[2];  // 0: Key codes, 1: Longpress codes
   //
   // Common
   //

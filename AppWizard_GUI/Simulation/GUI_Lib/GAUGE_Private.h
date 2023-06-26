@@ -3,13 +3,13 @@
 *        Solutions for real time microcontroller applications        *
 **********************************************************************
 *                                                                    *
-*        (c) 1996 - 2022  SEGGER Microcontroller GmbH                *
+*        (c) 1996 - 2023  SEGGER Microcontroller GmbH                *
 *                                                                    *
 *        Internet: www.segger.com    Support:  support@segger.com    *
 *                                                                    *
 **********************************************************************
 
-** emWin V6.26 - Graphical user interface for embedded applications **
+** emWin V6.32 - Graphical user interface for embedded applications **
 emWin is protected by international copyright laws.   Knowledge of the
 source code may not be used to write a similar product.  This file may
 only  be used  in accordance  with  a license  and should  not be  re-
@@ -78,7 +78,7 @@ typedef struct {
   I32         Angle;              // Current angle within the given range (Ang0 & Ang1)
   I32         MinVRange;          // Minimum of value range
   I32         MaxVRange;          // Maximum of value range
-  U8          CurvedFlags;
+  U8          Flags;
 } GAUGE_OBJ;
 
 /*********************************************************************

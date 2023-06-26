@@ -3,13 +3,13 @@
 *        Solutions for real time microcontroller applications        *
 **********************************************************************
 *                                                                    *
-*        (c) 1996 - 2022  SEGGER Microcontroller GmbH                *
+*        (c) 1996 - 2023  SEGGER Microcontroller GmbH                *
 *                                                                    *
 *        Internet: www.segger.com    Support:  support@segger.com    *
 *                                                                    *
 **********************************************************************
 
-** emWin V6.26 - Graphical user interface for embedded applications **
+** emWin V6.32 - Graphical user interface for embedded applications **
 emWin is protected by international copyright laws.   Knowledge of the
 source code may not be used to write a similar product.  This file may
 only  be used  in accordance  with  a license  and should  not be  re-
@@ -158,6 +158,7 @@ void SWITCH_SetPeriod       (SWITCH_Handle hObj, I32 Period);
 void SWITCH_SetState        (SWITCH_Handle hObj, int State);
 int  SWITCH_SetText         (SWITCH_Handle hObj, unsigned int Index, const char * pText);
 void SWITCH_SetTextColor    (SWITCH_Handle hObj, unsigned int Index, GUI_COLOR Color);
+void SWITCH_SetThumbSize    (SWITCH_Handle hObj, int xSize, int ySize);
 int  SWITCH_SetUserData     (SWITCH_Handle hObj, const void * pSrc, int NumBytes);
 void SWITCH_Toggle          (SWITCH_Handle hObj);
 
