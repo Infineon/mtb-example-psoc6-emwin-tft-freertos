@@ -2,9 +2,9 @@
 *
 * File Name: tft_task.c
 *
-* Description: This file contains task and functions related to the tft-task
-* that demonstrates controlling a tft display using the EmWin Graphics Library
-* and Appwizard GUI design tool.
+* Description: This file contains task and functions related to the tft_task
+* that demonstrates controlling a TFT display using the EmWin Graphics Library
+* and AppWizard GUI design tool.
 * The project displays a start up screen with Infineon logo and
 * text "INFINEON EMWIN GRAPHICS DEMO TFT DISPLAY".
 *
@@ -62,7 +62,17 @@
 #include "tft_task.h"
 #include "FreeRTOS.h"
 #include "task.h"
+#include "semphr.h"
 
+/*******************************************************************************
+* Macros
+*******************************************************************************/
+#define GPIO_INTERRUPT_PRIORITY (3u)
+
+
+/*******************************************************************************
+* Global Variables
+*******************************************************************************/
 /* The pins are defined by the st7789v library. If the display is being used
  *  on different hardware the mappings will be different. */
 const mtb_st7789v_pins_t tft_pins =
@@ -81,10 +91,19 @@ const mtb_st7789v_pins_t tft_pins =
     .rst  = CYBSP_D13
 };
 
+SemaphoreHandle_t xSwitchSemaphore = NULL;
+
+/* Configure GPIO interrupt */
+cyhal_gpio_callback_data_t switch_cb_data =
+{
+    .callback     = btn_interrupt_handler,
+    .callback_arg = NULL
+};
 
 /*******************************************************************************
-* Forward Function Prototypes
+* Function Prototypes
 *******************************************************************************/
+
 
 /*******************************************************************************
 * Function Name: void tft_task(void *arg)
@@ -95,7 +114,7 @@ const mtb_st7789v_pins_t tft_pins =
 *           2. Displays startup screen for 3 seconds
 *           3. In an infinite loop, displays the following screens on
                key press and release
-*               a. Text alignement, styles and modes
+*               a. Text alignment, styles and modes
 *               b. Text color
 *               c. Normal fonts
 *               d. Bold fonts
@@ -106,7 +125,7 @@ const mtb_st7789v_pins_t tft_pins =
 *               i. Bitmap image
 *
 * Parameters:
-*  arg: task argument
+*  arg: task argument (unused)
 *
 * Return:
 *  None
@@ -118,29 +137,60 @@ void tft_task(void *arg)
 
     /* Initialize the User Button */
     result = cyhal_gpio_init(CYBSP_USER_BTN, CYHAL_GPIO_DIR_INPUT, CYHAL_GPIO_DRIVE_PULLUP, CYBSP_BTN_OFF);
+
+    /* Register callback function - btn_interrupt_handler and pass the value global_count */
+    cyhal_gpio_register_callback(CYBSP_USER_BTN, &switch_cb_data);
+
+    /* Enable falling edge interrupt event with interrupt priority set to 3 */
+    cyhal_gpio_enable_event(CYBSP_USER_BTN, CYHAL_GPIO_IRQ_FALL, GPIO_INTERRUPT_PRIORITY, true);
     CY_ASSERT(result == CY_RSLT_SUCCESS);
+
+    /* Create a semaphore */
+    xSwitchSemaphore = xSemaphoreCreateBinary();
+
     /* Initialize the User LED */
     result = cyhal_gpio_init( CYBSP_USER_LED, CYHAL_GPIO_DIR_OUTPUT, CYHAL_GPIO_DRIVE_STRONG,
                      CYBSP_LED_STATE_OFF);
     CY_ASSERT(result == CY_RSLT_SUCCESS);
+
     /* Initialize the display controller */
     result = mtb_st7789v_init8(&tft_pins);
     CY_ASSERT(result == CY_RSLT_SUCCESS);
-    
+
     /* To avoid compiler warning */
     (void)result;
-    
-    /* Calling the Appwizard application entry point*/
+
+    /* Calling the AppWizard application entry point*/
     MainTask();
+}
+
+
+/*******************************************************************************
+* Function Name: void btn_interrupt_handler(void* handler_arg, cyhal_gpio_event_t event)
+********************************************************************************
+*
+* Summary: GPIO interrupt handler.
+*
+* Parameters:
+*  handler_arg: (unused)
+*  event: (unused)
+*
+* Return:
+*  None
+*
+*******************************************************************************/
+void btn_interrupt_handler(void* handler_arg, cyhal_gpio_event_t event)
+{
+    CY_UNUSED_PARAMETER(event);
+    xSemaphoreGiveFromISR(xSwitchSemaphore, NULL);
+    portYIELD_FROM_ISR(pdTRUE);
 }
 
 /*******************************************************************************
 * Function Name: void wait_for_switch_press_and_release(void)
 ********************************************************************************
 *
-* Summary: This implements a simple "Wait for button press and release"
-*           function.  It first waits for the button to be pressed and then
-*           waits for the button to be released.
+* Summary: This implements a semaphore wait.
 *
 * Parameters:
 *  None
@@ -148,17 +198,11 @@ void tft_task(void *arg)
 * Return:
 *  None
 *
-* Side Effects:
-*  This is a blocking function and exits only on a button press and release
-*
 *******************************************************************************/
 void wait_for_switch_press_and_release(void)
 {
-    /* Wait for SW2 to be pressed */
-    while(cyhal_gpio_read(CYBSP_USER_BTN) != CYBSP_BTN_PRESSED);
-
-    /* Wait for SW2 to be released */
-    while(cyhal_gpio_read(CYBSP_USER_BTN) == CYBSP_BTN_OFF);
+    /* Semaphore wait (wait for switch to be released) */
+    xSemaphoreTake(xSwitchSemaphore, portMAX_DELAY);
 }
 
 /* END OF FILE */

@@ -1,7 +1,7 @@
 /******************************************************************************
 * File Name:   main.c
 *
-* Description: This is the source code for the PSoC6 EmWin TFT FreeRTOS 
+* Description: This is the source code for the PSoC6 EmWin TFT FreeRTOS
 *                 Application  for ModusToolbox.
 *
 * Related Document: See README.md
@@ -100,12 +100,12 @@ int main(void)
     result = cy_retarget_io_init(CYBSP_DEBUG_UART_TX, CYBSP_DEBUG_UART_RX,
                                     CY_RETARGET_IO_BAUDRATE);
     CY_ASSERT(result == CY_RSLT_SUCCESS);
-    
+
     /* To avoid compiler warning */
     (void)result;
 
     __enable_irq();
-    
+
     /* \x1b[2J\x1b[;H - ANSI ESC sequence for clear screen */
     printf("\x1b[2J\x1b[;H");
 

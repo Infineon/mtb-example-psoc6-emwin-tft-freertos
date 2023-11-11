@@ -42,8 +42,8 @@
 #define TFT_TASK_H_
 
 void tft_task(void *arg);
+void btn_interrupt_handler(void* handler_arg, cyhal_gpio_event_t event);
 void wait_for_switch_press_and_release(void);
 
 
 #endif /* TFT_TASK_H_ */
-

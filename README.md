@@ -4,7 +4,7 @@ This example demonstrates displaying 2D graphics on a TFT display using the emWi
 
 [View this README on GitHub.](https://github.com/Infineon/mtb-example-psoc6-emwin-tft-freertos)
 
-[Provide feedback on this code example.](https://cypress.co1.qualtrics.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyMzE3MTEiLCJTcGVjIE51bWJlciI6IjAwMi0zMTcxMSIsIkRvYyBUaXRsZSI6IlBTb0MmdHJhZGU7IDYgTUNVOiBlbVdpbiBURlQgaW4gRnJlZVJUT1MiLCJyaWQiOiJiZm1jIiwiRG9jIHZlcnNpb24iOiIzLjIuMCIsIkRvYyBMYW5ndWFnZSI6IkVuZ2xpc2giLCJEb2MgRGl2aXNpb24iOiJNQ0QiLCJEb2MgQlUiOiJJQ1ciLCJEb2MgRmFtaWx5IjoiUFNPQyJ9)
+[Provide feedback on this code example.](https://cypress.co1.qualtrics.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyMzE3MTEiLCJTcGVjIE51bWJlciI6IjAwMi0zMTcxMSIsIkRvYyBUaXRsZSI6IlBTb0MmdHJhZGU7IDYgTUNVOiBlbVdpbiBURlQgaW4gRnJlZVJUT1MiLCJyaWQiOiJiZm1jIiwiRG9jIHZlcnNpb24iOiIzLjIuMSIsIkRvYyBMYW5ndWFnZSI6IkVuZ2xpc2giLCJEb2MgRGl2aXNpb24iOiJNQ0QiLCJEb2MgQlUiOiJJQ1ciLCJEb2MgRmFtaWx5IjoiUFNPQyJ9)
 
 
 
@@ -12,7 +12,7 @@ This example demonstrates displaying 2D graphics on a TFT display using the emWi
 
 - [ModusToolbox&trade; software](https://www.infineon.com/modustoolbox) v3.1 or later (tested with v3.1)
 - [SEGGER AppWizard](https://softwaretools.infineon.com/tools/com.ifx.tb.tool.appwizard) V1.38_6.32d or the version compatible with the used emWin graphics library
-- Board support package (BSP) minimum required version: 4.0.0  
+- Board support package (BSP) minimum required version: 4.0.0
 - Programming language: C
 - Associated parts: All [PSoC&trade; 6 MCU](https://www.infineon.com/cms/en/product/microcontroller/32-bit-psoc-arm-cortex-microcontroller/psoc-6-32-bit-arm-cortex-m4-mcu) parts
 
@@ -29,7 +29,7 @@ This example demonstrates displaying 2D graphics on a TFT display using the emWi
 ## Supported kits (make variable 'TARGET')
 
 - [PSoC&trade; 6 Wi-Fi Bluetooth&reg; Pioneer Kit](https://www.infineon.com/CY8CKIT-062-WIFI-BT) (`CY8CKIT-062-WIFI-BT`) - Default value of `TARGET`
-- [PSoC&trade; 6 Bluetooth&reg; LE Pioneer Kit](https://www.infineon.com/CY8CKIT-062-BLE) (`CY8CKIT-062-BLE`) 
+- [PSoC&trade; 6 Bluetooth&reg; LE Pioneer Kit](https://www.infineon.com/CY8CKIT-062-BLE) (`CY8CKIT-062-BLE`)
 - [PSoC&trade; 62S2 Wi-Fi Bluetooth&reg; Pioneer Kit](https://www.infineon.com/CY8CKIT-062S2-43012) (`CY8CKIT-062S2-43012`)
 - [PSoC&trade; 62S1 Wi-Fi Bluetooth&reg; Pioneer Kit](https://www.infineon.com/CYW9P62S1-43438EVB-01) (`CYW9P62S1-43438EVB-01`)
 - [PSoC&trade; 62S2 Evaluation Kit](https://www.infineon.com/CY8CEVAL-062S2) (`CY8CEVAL-062S2`, `CY8CEVAL-062S2-LAI-4373M2`, `CY8CEVAL-062S2-MUR-43439M2`, `CY8CEVAL-062S2-LAI-43439M2`, `CY8CEVAL-062S2-MUR-4373EM2`, `CY8CEVAL-062S2-MUR-4373M2`)
@@ -195,7 +195,7 @@ If using a PSoC&trade; 64 "Secure" MCU kit (such as CY8CKIT-064B0S2-4343W, CY8CK
    **Figure 1. Startup screen**
 
    <img src="images/startup.jpg" alt=""  align="left" /> <img src="images/instructions.jpg"/>
-   
+
    <br>
 
    **Figure 2. Pages are shown in sequence**
@@ -218,14 +218,14 @@ This project uses a [CY8CKIT-028-TFT](https://www.infineon.com/cms/en/product/ev
 
 There are four important parts in this code example:
 
-1. **[emWin graphics library:](https://github.com/Infineon/emwin)** The emWin graphics library is implemented as middleware and has all the graphics functions. In this example, the library manages a display buffer and updates it with the pixel data following the graphics operations performed. See [emWin middleware documentation](https://github.com/Infineon/emwin) on GitHub to understand the structure of the emWin package, supported drivers, and a quick start guide to create and run your first emWin project from scratch. The documentation page also contains configuration details on a wide variety of display drivers provided by emWin. 
+1. **[emWin graphics library:](https://github.com/Infineon/emwin)** The emWin graphics library is implemented as middleware and has all the graphics functions. In this example, the library manages a display buffer and updates it with the pixel data following the graphics operations performed. See [emWin middleware documentation](https://github.com/Infineon/emwin) on GitHub to understand the structure of the emWin package, supported drivers, and a quick start guide to create and run your first emWin project from scratch. The documentation page also contains configuration details on a wide variety of display drivers provided by emWin.
 
 2. **[display-tft-st7789v library:](https://github.com/Infineon/display-tft-st7789v)** The display-tft-st7789v library provides the supporting functions for communicating with the ST7789V TFT controller. The functions in this library control the pin states for the 8-bit parallel interface.
 
 3. **Application code:** The application code sets up the FreeRTOS task and begins the scheduler. The FreeRTOS task calls the AppWizard MainTask() to perform various graphics functions.
 
 4. **AppWizard project:** The GUI that is displayed on the screen is designed using the AppWizard software. The code example includes the corresponding AppWizard project.
- 
+
 
 
 ### AppWizard custom code
@@ -297,10 +297,11 @@ Document title: *CE231711* – *PSoC&trade; 6 MCU: emWin TFT in FreeRTOS*
  Version | Description of change
  ------- | ---------------------
  1.0.0   | New code example
- 2.0.0   | Updated to support SEGGER AppWizard tool for graphics generation 
+ 2.0.0   | Updated to support SEGGER AppWizard tool for graphics generation
  3.0.0   | Major update to support ModusToolbox&trade; v3.0. This version is not backward compatible with previous versions of ModusToolbox. Migrated the CE to use the latest emWin version V1.30_6.26d
  3.1.0   | Added support for CY8CKIT-064B0S2-4343W, CY8CEVAL-062S2-LAI-43439M2
  3.2.0   | Added support for CY8CEVAL-062S2-MUR-4373EM2, CY8CEVAL-062S2-MUR-4373M2. Migrated the CE to use the latest emWin version V1.38_6.32d
+ 3.2.1   | Minor source file change related to TFT task
 <br>
 
 ---------------------------------------------------------
